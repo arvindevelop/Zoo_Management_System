@@ -35,11 +35,11 @@ include('includes/config.php');
 							<div class="clients">
 								<ul id="flexiselDemo3">
 									<?php 
- $query=mysqli_query($con,"select * from tblanimal");
+ $query=mysqli_query($con,"select * from animal");
  while ($row=mysqli_fetch_array($query)) {
  ?>
 									<!--animals-->
-									<li><img src="admin/images/<?php echo $row['AnimalImage'];?>" width='220' height='200' alt=" " class="img-responsive" /></li><?php }?>
+									<li><img src="admin/images/<?php echo $row['Image'];?>" width='220' height='200' alt=" " class="img-responsive" /></li><?php }?>
 								</ul>
 									<script type="text/javascript">
 								$(window).load(function() {

@@ -2,7 +2,7 @@
 session_start();
 error_reporting(0);
 
-include('includes/dbconnection.php');
+include('includes/config.php');
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -10,8 +10,6 @@ include('includes/dbconnection.php');
 <title>Zoo | Animal Detail</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-
-<!--<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>-->
 <script src="js/jquery-1.11.1.min.js"></script>
 <script src="js/bootstrap.js"></script>
 <!--lightbox-->
@@ -47,17 +45,17 @@ include('includes/dbconnection.php');
         // Formula for pagination
         $no_of_records_per_page = 4;
         $offset = ($pageno-1) * $no_of_records_per_page;
-        $total_pages_sql = "SELECT COUNT(*) FROM tblanimal";
-$ret1=mysqli_query($con,"select COUNT(*) from  tblanimal");
+        $total_pages_sql = "SELECT COUNT(*) FROM animal";
+$ret1=mysqli_query($con,"select COUNT(*) from animal");
 $total_rows = mysqli_fetch_array($ret1)[0];
 $total_pages = ceil($total_rows / $no_of_records_per_page);
- $query=mysqli_query($con,"select * from tblanimal LIMIT $offset, $no_of_records_per_page");
+$query=mysqli_query($con,"select * from animal LIMIT $offset, $no_of_records_per_page");
  while ($row=mysqli_fetch_array($query)) {
  ?>
 								<div class="col-md-3 welcome-grid" >
-									<img src="admin/images/<?php echo $row['AnimalImage'];?>" width='220' height='200' alt=" " class="img-responsive" />
+									<img src="admin/images/<?php echo $row['Image'];?>" width='220' height='200' alt=" " class="img-responsive" />
 									<div class="wel-info">
-										<h4><a href="animal-detail.php?anid=<?php echo $row['ID'];?>"><?php echo $row['AnimalName'];?>(<?php echo $row['Breed'];?>)</a></h4>
+										<h4><a href="animal-detail.php?anid=<?php echo $row['ID'];?>"><?php echo $row['Name'];?>(<?php echo $row['BreedType'];?>)</a></h4>
 										
 									</div>
 								<br></div><?php }?>
