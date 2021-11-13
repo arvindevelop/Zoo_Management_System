@@ -1,7 +1,7 @@
 <?php
 session_start();
-include('includes/dbconnection.php');
 error_reporting(0);
+include('includes/config.php');
 if (strlen($_SESSION['zmsaid']==0)) {
   header('location:logout.php');
   } else{
@@ -11,7 +11,7 @@ if(isset($_POST['submit']))
     $aname=$_POST['aname'];
     $breed=$_POST['breed'];
     $desc=$_POST['desc'];    
-    $query=mysqli_query($con, "update tblanimal set AnimalName='$aname',Breed='$breed', Description='$desc' where ID='$aniid'");
+    $query=mysqli_query($con, "update animal set Name='$aname', BreedType='$breed', Description='$desc' where ID='$aniid'");
     if ($query) {
   
     echo '<script>alert("Animal detail has been Updated.")</script>';
@@ -59,14 +59,8 @@ if(isset($_POST['submit']))
     
     <!-- page container area start -->
     <div class="page-container">
-        <!-- sidebar menu area start -->
-
-        <!-- sidebar menu area end -->
         <!-- main content area start -->
         <div class="main-content">
-            <!-- header area start -->
-          <?php include_once('includes/header.php');?>
-            <!-- header area end -->
             <!-- page title area start -->
            <?php include_once('includes/pagetitle.php');?>
             <!-- page title area end -->
@@ -83,31 +77,27 @@ if(isset($_POST['submit']))
                                         <form method="post" enctype="multipart/form-data">
                                             <?php
  $aniid=$_GET['editid'];
-$ret=mysqli_query($con,"select * from tblanimal where ID='$aniid'");
+$ret=mysqli_query($con,"select * from animal where ID='$aniid'");
 $cnt=1;
 while ($row=mysqli_fetch_array($ret)) {
 
 ?>
                                              <div class="form-group">
                                                 <label for="exampleInputEmail1">Animal Name</label>
-                                                <input type="text" class="form-control" id="aname" name="aname" aria-describedby="emailHelp" placeholder="Enter animal Name" value="<?php  echo $row['AnimalName'];?>" required="true">
+                                                <input type="text" class="form-control" id="aname" name="aname" aria-describedby="emailHelp" placeholder="Enter animal Name" value="<?php  echo $row['Name'];?>" required="true">
                                             </div>
                                        
                                            <div class="form-group">
                                                 <label for="exampleInputEmail1">Animal Image</label>
-                                                <img src="images/<?php  echo $row['AnimalImage'];?>" width="100" height="100"> <a href="changeimage.php?editid=<?php echo $row['ID'];?>"> &nbsp; Edit Image</a>
+                                                <img src="images/<?php  echo $row['Image'];?>" width="100" height="100"> <a href="changeimage.php?editid=<?php echo $row['ID'];?>"> &nbsp; Edit Image</a>
                                             </div>
                                            <div class="form-group">
                                                 <label for="exampleInputEmail1">Cage Number</label>
                                                 <input type="text" class="form-control" id="cnum" name="cnum" aria-describedby="emailHelp" placeholder="Enter cage number" value="<?php  echo $row['CageNumber'];?>" readonly="true" maxlength="5">
                                             </div> 
                                             <div class="form-group">
-                                                <label for="exampleInputEmail1">Feed Number</label>
-                                                <input type="text" class="form-control" id="fnum" name="fnum" aria-describedby="emailHelp" placeholder="Enter feed number" value="<?php  echo $row['FeedNumber'];?>" readonly="true" maxlength="6">
-                                            </div>
-                                            <div class="form-group">
                                                 <label for="exampleInputEmail1">Breed</label>
-                                                <input type="text" class="form-control" id="breed" name="breed" aria-describedby="emailHelp" placeholder="Enter breed" value="<?php  echo $row['Breed'];?>" required="true">
+                                                <input type="text" class="form-control" id="breed" name="breed" aria-describedby="emailHelp" placeholder="Enter breed" value="<?php  echo $row['BreedType'];?>" required="true">
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Description</label>

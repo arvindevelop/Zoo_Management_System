@@ -5,9 +5,22 @@ include('includes/config.php');
 if (strlen($_SESSION['zmsaid']==0)) {
   header('location:logout.php');
   } else{
-
-
+    if(isset($_POST['submit']))
+  {
+    $adminid=$_SESSION['zmsaid'];
+    $aname=$_POST['adminname'];
   
+     $query=mysqli_query($con, "update admin set Name ='$aname'where ID='$adminid'");
+    if ($query) {
+    
+    echo '<script>alert("Profile has been updated")</script>';
+  }
+  else
+    {
+     
+      echo '<script>alert("Something Went Wrong. Please try again.")</script>';
+    }
+  }
   ?>
 
 <!doctype html>
@@ -16,7 +29,7 @@ if (strlen($_SESSION['zmsaid']==0)) {
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>View Indian Ticket - Zoo Management System</title>
+    <title>Admin Profile - Zoo Management System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="assets/images/icon/favicon.ico">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -34,7 +47,6 @@ if (strlen($_SESSION['zmsaid']==0)) {
     <link rel="stylesheet" href="assets/css/responsive.css">
     <!-- modernizr css -->
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
-    
 </head>
 
 <body>
@@ -48,54 +60,46 @@ if (strlen($_SESSION['zmsaid']==0)) {
             <!-- page title area end -->
             <div class="main-content-inner">
                 <div class="row">
-               
                     <div class="col-lg-12 col-ml-12">
                         <div class="row">
                             <!-- basic form start -->
                             <div class="col-12 mt-5">
                                 <div class="card">
-                                    <div class="card-body" id="exampl">
-                                        <?php
- $vid=$_GET['viewid'];
-$ret=mysqli_query($con,"select * from customer where UID='$vid'");
+                                    <div class="card-body">
+                                        <h4 class="header-title">Admin Profile</h4>
+
+   <?php
+$adminid=$_SESSION['zmsaid'];
+$ret=mysqli_query($con,"select * from admin where ID='$adminid'");
 $cnt=1;
 while ($row=mysqli_fetch_array($ret)) {
 
 ?>
-                                        <h4 class="header-title" style="color: blue">View Detail of Ticket ID: <?php  echo $row['TicketID'];?></h4>
-                                        <h5 class="header-title" style="color: blue">Visiting Date: <?php  echo $row['PostingDate'];?></h5>
+                                        <form method="post" action="">
+                                             <div class="form-group">
 
+                                                <label for="exampleInputEmail1">Admin Name</label>
+                                                <input type="text" class="form-control" id="adminname" name="adminname" aria-describedby="emailHelp" placeholder="Admin Name" value="<?php  echo $row['AdminName'];?>">
+                                                
+                                            </div>
+ <div class="form-group">
 
-                                        <table border="1" class="table table-striped table-bordered first" >
-                                            <tr>
-                                                <th>#</th>
-                                                <th>No of Tickets</th>
-                                                <th>Price per unit</th>
-                                                <th>Total</th>
-                                            </tr>
-                                <tr>
-                                    <th >Number of Adult </th>
-                                    <td style="padding-left: 10px"><?php  echo $noadult=$row['NoAdult'];?></td>
-                                     <td style="padding-left: 10px">$<?php  echo $cup=$row['AdultUnitprice'];?></td>
-                                     <td style="padding-left: 10px">$<?php  echo $ta=$cup*$noadult;?></td>
-                                </tr>
-                                <tr>
-                                    <th>Number of Chlidren </th>
-                                    <td style="padding-left: 10px"><?php  echo $nochild=$row['NoChildren'];?></td>
-                                    <td style="padding-left: 10px">$<?php  echo $aup=$row['ChildUnitprice'];?></td>
-                                     <td style="padding-left: 10px">$<?php  echo $tc=$aup*$nochild;?></td>
-                                </tr>
-     
-                                 <tr>
-                                    <th style="text-align: center;color: red;font-size: 20px" colspan="3">Total Ticket Price</th>
-                                    <td style="padding-left: 10px;">$<?php  echo ($ta+$tc);?></td>
-                                </tr>
-                                </table>
+                                                <label for="exampleInputEmail1">User Name</label>
+                                                <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp" readonly="true" value="<?php  echo $row['UserName'];?>">
+                                                
+                                            </div>
+                                            <div class="form-group">
+
+                                                <label for="exampleInputEmail1">Email address</label>
+                                                <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" readonly="true" value="<?php  echo $row['Email'];?>">
+                                                <small id="emailHelp" class="form-text text-muted">We'll never share your
+                                                    email with anyone else.</small>
+                                            </div>
+                                         
+                                            <?php }  ?>
+                                            <button type="submit" class="btn btn-primary mt-4 pr-4 pl-4" name="submit">Update</button>
+                                        </form>
                                     </div>
-                                    <?php } ?>
-                                     <p style="margin-top:1%"  align="center">
-  <i class="fa fa-print fa-2x" style="cursor: pointer;"  OnClick="CallPrint(this.value)" ></i>
-</p>
                                 </div>
                             </div>
                             <!-- basic form end -->
@@ -112,7 +116,6 @@ while ($row=mysqli_fetch_array($ret)) {
         <!-- footer area end-->
     </div>
     <!-- page container area end -->
-    <!-- offset area start -->
     
     <!-- jquery latest version -->
     <script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
@@ -127,20 +130,6 @@ while ($row=mysqli_fetch_array($ret)) {
     <!-- others plugins -->
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/scripts.js"></script>
-
-     <script>
-function CallPrint(strid) {
-var prtContent = document.getElementById("exampl");
-var WinPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
-WinPrint.document.write(prtContent.innerHTML);
-WinPrint.document.close();
-WinPrint.focus();
-WinPrint.print();
-WinPrint.close();
-}
-
-</script>
-
 </body>
 
 </html>

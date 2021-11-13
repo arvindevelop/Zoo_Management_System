@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('includes/dbconnection.php');
+include('includes/config.php');
 error_reporting(0);
 if (strlen($_SESSION['zmsaid']==0)) {
   header('location:logout.php');
@@ -11,7 +11,7 @@ if(isset($_POST['submit']))
     $tpype=$_POST['tickettype'];
     $tprice=$_POST['tprice'];
     
-    $query=mysqli_query($con, "update tbltickettype set TicketType='$tpype',Price='$tprice' where ID='$tid'");
+    $query=mysqli_query($con, "update ticket set TicketType='$tpype',Price='$tprice' where ID='$tid'");
     if ($query) {
   
     echo '<script>alert("Ticket detail has been Updated.")</script>';
@@ -68,7 +68,7 @@ if(isset($_POST['submit']))
                                         <form method="post" action="" name="">
                                             <?php
  $tid=$_GET['editid'];
-$ret=mysqli_query($con,"select * from tbltickettype where ID='$tid'");
+$ret=mysqli_query($con,"select * from ticket where ID='$tid'");
 $cnt=1;
 while ($row=mysqli_fetch_array($ret)) {
 

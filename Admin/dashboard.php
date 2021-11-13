@@ -1,7 +1,7 @@
 <?php  
 session_start();
 error_reporting(0);
-include('includes/dbconnection.php');
+include('includes/config.php');
 if (strlen($_SESSION['zmsaid']==0)) {
   header('location:logout.php');
   } else{
@@ -51,7 +51,7 @@ if (strlen($_SESSION['zmsaid']==0)) {
                                             </tr>
                                         </thead>
                                         <?php
-$ret=mysqli_query($con,"select * from tblticindian order by ID desc");
+$ret=mysqli_query($con,"select * from customer order by UID desc");
 $cnt=1;
 while ($row=mysqli_fetch_array($ret)) {
 
@@ -62,7 +62,7 @@ while ($row=mysqli_fetch_array($ret)) {
               
                   <td><?php  echo $row['TicketID'];?></td>
                   <td><?php  echo $row['PostingDate'];?></td>
-                  <td><a href="view-normal-ticket.php?viewid=<?php echo $row['ID'];?>">View</a>
+                  <td><a href="view-normal-ticket.php?viewid=<?php echo $row['UID'];?>">View</a>
                 </tr>
                 <?php 
 $cnt=$cnt+1;

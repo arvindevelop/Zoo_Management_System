@@ -1,7 +1,7 @@
 <?php
 session_start();
-include('includes/dbconnection.php');
 error_reporting(0);
+include('includes/config.php');
 if (strlen($_SESSION['zmsaid']==0)) {
   header('location:logout.php');
   } else{
@@ -9,7 +9,6 @@ if(isset($_POST['submit']))
   {
     $aname=$_POST['aname'];
     $cnum=$_POST['cnum'];
-    $fnum=$_POST['fnum'];
     $breed=$_POST['breed'];
     $desc=$_POST['desc'];
    $aimg=$_FILES["image"]["name"];
@@ -24,15 +23,15 @@ else
 
 $aimg=md5($aimg).time().$extension;
  move_uploaded_file($_FILES["image"]["tmp_name"],"images/".$aimg);
- $ret=mysqli_query($con,"select CageNumber,FeedNumber from tblanimal where CageNumber='$cnum' || FeedNumber='$fnum'");
+ $ret=mysqli_query($con,"select CageNumber from animal where CageNumber='$cnum'");
  $result=mysqli_fetch_array($ret);
  if($result>0){
 
-echo "<script>alert('This cage number or feed number is already alloted to other animal');</script>";
+echo "<script>alert('This cage number is already alloted to other animal');</script>";
     }
     else{
    
-        $query=mysqli_query($con, "insert into  tblanimal(AnimalName,CageNumber,FeedNumber,Breed,Description,AnimalImage) value('$aname','$cnum','$fnum','$breed','$desc','$aimg')");
+        $query=mysqli_query($con, "insert into  animal(Name,CageNumber,BreedType,Description,Image) value('$aname','$cnum','$breed','$desc','$aimg')");
     if ($query) {
     
      echo '<script>alert("Animal detail has been added.")</script>';
@@ -97,10 +96,6 @@ echo "<script>alert('This cage number or feed number is already alloted to other
                                                 <label for="exampleInputEmail1">Cage Number</label>
                                                 <input type="text" class="form-control" id="cnum" name="cnum" aria-describedby="emailHelp" placeholder="Enter cage number" value="" required="true" maxlength="5">
                                             </div> 
-                                            <div class="form-group">
-                                                <label for="exampleInputEmail1">Feed Number</label>
-                                                <input type="text" class="form-control" id="fnum" name="fnum" aria-describedby="emailHelp" placeholder="Enter feed number" value="" required="true" maxlength="6">
-                                            </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Breed</label>
                                                 <input type="text" class="form-control" id="breed" name="breed" aria-describedby="emailHelp" placeholder="Enter breed" value="" required="true">

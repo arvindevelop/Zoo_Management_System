@@ -1,7 +1,7 @@
 <?php  
 session_start();
 error_reporting(0);
-include('includes/dbconnection.php');
+include('includes/config.php');
 if (strlen($_SESSION['zmsaid']==0)) {
   header('location:logout.php');
   } else{
@@ -46,12 +46,11 @@ if (strlen($_SESSION['zmsaid']==0)) {
                                                 <th>S.NO</th>
                                                 <th>Cage Number</th>
                                                 <th>Animal Name</th>
-                                                <th>Creation Date</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <?php
-$ret=mysqli_query($con,"select * from tblanimal order by ID desc");
+$ret=mysqli_query($con,"select * from animal order by ID desc");
 $cnt=1;
 while ($row=mysqli_fetch_array($ret)) {
 
@@ -61,8 +60,7 @@ while ($row=mysqli_fetch_array($ret)) {
             <td><?php echo $cnt;?></td>
               
                   <td><?php  echo $row['CageNumber'];?></td>
-                  <td><?php  echo $row['AnimalName'];?>(<?php  echo $row['Breed'];?>)</td>
-                  <td><?php  echo $row['CreationDate'];?></td>
+                  <td><?php  echo $row['Name'];?>(<?php  echo $row['BreedType'];?>)</td>
                   <td><a href="edit-animal-details.php?editid=<?php echo $row['ID'];?>">Edit</a>
                 </tr>
                 <?php 

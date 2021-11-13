@@ -1,7 +1,7 @@
 <?php
 session_start();
-include('includes/dbconnection.php');
 error_reporting(0);
+include('includes/config.php');
 if (strlen($_SESSION['zmsaid']==0)) {
   header('location:logout.php');
   } else{
@@ -13,7 +13,7 @@ if(isset($_POST['submit']))
     $cprice=$_POST['cprice'];
     $ticketid=mt_rand(100000000, 999999999);
    
-        $query=mysqli_query($con, "insert into  tblticindian(TicketID,NoAdult,NoChildren,AdultUnitprice,ChildUnitprice) value('$ticketid','$noadult','$nochildren','$aprice','$cprice')");
+        $query=mysqli_query($con, "insert into  customer(TicketID,NoAdult,NoChildren,AdultUnitprice,ChildUnitprice) value('$ticketid','$noadult','$nochildren','$aprice','$cprice')");
     if ($query) {
     
      echo '<script>alert("Ticket information has been added.")</script>';
@@ -78,7 +78,7 @@ if(isset($_POST['submit']))
                                             </div>
                                             <?php
 
-$ret=mysqli_query($con,"select * from tbltickettype where TicketType='Normal Adult'");
+$ret=mysqli_query($con,"select * from ticket where TicketType='Adult'");
 $cnt=1;
 while ($row=mysqli_fetch_array($ret)) {
 
@@ -88,7 +88,7 @@ while ($row=mysqli_fetch_array($ret)) {
 
                                              <?php
 
-$ret=mysqli_query($con,"select * from tbltickettype where TicketType='Normal Child'");
+$ret=mysqli_query($con,"select * from ticket where TicketType='Child'");
 $cnt=1;
 while ($row=mysqli_fetch_array($ret)) {
 
@@ -115,7 +115,6 @@ while ($row=mysqli_fetch_array($ret)) {
         <!-- footer area end-->
     </div>
     <!-- page container area end -->
-    <!-- offset area start -->
     
     <!-- jquery latest version -->
     <script src="assets/js/vendor/jquery-2.2.4.min.js"></script>

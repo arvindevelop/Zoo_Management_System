@@ -1,7 +1,7 @@
 <?php
-
-include('includes/dbconnection.php');
+session_start();
 error_reporting(0);
+include('includes/config.php');
 ?>
 <div class="page-title-area">
                 <div class="row align-items-center">
@@ -35,15 +35,14 @@ error_reporting(0);
                             <img class="avatar user-thumb" src="assets/images/author/avatar.png" alt="avatar">
                             <?php
 $adid=$_SESSION['zmsaid'];
-$ret=mysqli_query($con,"select AdminName from tbladmin where ID='$adid'");
+$ret=mysqli_query($con,"select Name from admin where ID='$adid'");
 $row=mysqli_fetch_array($ret);
-$name=$row['AdminName'];
+$name=$row['Name'];
 
 ?>
                             <h4 class="user-name dropdown-toggle" data-toggle="dropdown"><?php echo $name; ?> <i class="fa fa-angle-down"></i></h4>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="profile.php">Profile</a>
-                                <a class="dropdown-item" href="change-password.php">Settings</a>
                                 <a class="dropdown-item" href="logout.php">Log Out</a>
                             </div>
                         </div>

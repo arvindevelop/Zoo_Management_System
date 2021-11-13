@@ -1,13 +1,13 @@
 <?php
 session_start();
 error_reporting(0);
-include('includes/dbconnection.php');
+include('includes/config.php');
 
 if(isset($_POST['login']))
   {
-    $adminuser=$_POST['username'];
+    $adminuser=$_POST['name'];
     $password=md5($_POST['password']);
-    $query=mysqli_query($con,"select ID from tbladmin where  UserName='$adminuser' && Password='$password' ");
+    $query=mysqli_query($con,"select ID from admin where Name='$adminuser' && Password='$password'");
     $ret=mysqli_fetch_array($query);
     if($ret>0){
       $_SESSION['zmsaid']=$ret['ID'];
@@ -51,12 +51,12 @@ if(isset($_POST['login']))
                     </div>
                     <div class="login-form-body">
                         <div class="form-gp">
-                            <label for="exampleInputEmail1">User Name</label>
-                            <input type="text" id="username" name="username" required="true">
+                            <label>User Name</label>
+                            <input type="text" id="username" name="name" required="true">
                             <i class="ti-user"></i>
                         </div>
                         <div class="form-gp">
-                            <label for="exampleInputPassword1">Password</label>
+                            <label>Password</label>
                             <input type="password" id="password" name="password" required="true">
                             <i class="ti-lock"></i>
                         </div>

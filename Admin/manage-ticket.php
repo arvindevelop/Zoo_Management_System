@@ -1,7 +1,7 @@
 <?php  
 session_start();
 error_reporting(0);
-include('includes/dbconnection.php');
+include('includes/config.php');
 if (strlen($_SESSION['zmsaid']==0)) {
   header('location:logout.php');
   } else{
@@ -50,7 +50,7 @@ if (strlen($_SESSION['zmsaid']==0)) {
                                             </tr>
                                         </thead>
                                          <?php
-$ret=mysqli_query($con,"select * from tbltickettype");
+$ret=mysqli_query($con,"select * from ticket");
 $cnt=1;
 while ($row=mysqli_fetch_array($ret)) {
 
