@@ -26,7 +26,7 @@
 								<div class="advantage">
 									<h3>About Us</h3>	
 									<div class="right-grid">
-										<p>We understand that running your business is hard work. This is a game-changer when it comes to family activity center software. Clubspeed develops and adapts our solution specifically for the needs of your business; simply sit back, relax, and let us do all the heavy lifting. Then the fun will truly begin!</p>
+										<p>Zoo management System is a software application to manage all the day to day activities at the zoo. Basically, zoo management system has access to search which animal present at which place using cage number. Cages has cage number so that it can be easily manage. Also, this project provides an option to issue the tickets and manage ticket price on the basis of adult and child.</p>
 									</div>
 									<div class="clearfix"></div>
 								</div>
