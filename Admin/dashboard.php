@@ -19,9 +19,6 @@ if (strlen($_SESSION['zmsaid']==0)) {
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <title>Manage Normal Ticket - Zoo Management System</title>
-    <!-- <link rel="stylesheet" href="assets/css/responsive.css"> -->
-    <!-- modernizr css -->
-    <!-- <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script> -->
 </head>
 
 <body>
