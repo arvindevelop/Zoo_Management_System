@@ -15,7 +15,6 @@ include('includes/config.php');
                                     <h4 class="user-name dropdown-toggle" style="color:black;" data-toggle="dropdown">Customer<i class="fa fa-angle-down"></i></h4>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="add-normal-ticket.php">Add Ticket</a>
-                                        <a class="dropdown-item" href="edit-ticket.php">Manage Ticket</a>
                                     </div>
                                 </li>
                                 <li>
