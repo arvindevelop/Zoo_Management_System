@@ -7,7 +7,7 @@ include('includes/config.php');
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Zoo Management System | Animal Detail</title>
+<title>ZMS | Animal Detail</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <script src="js/jquery-1.11.1.min.js"></script>
@@ -35,7 +35,7 @@ include('includes/config.php');
 			<div class="gallery-section">
 					<div class="container">
 					<div class="welcome-grid">
-				
+				<div class="col-md-2"></div>
 				<div class="col-md-8">
 					<div>
 						<?php 
@@ -47,10 +47,11 @@ include('includes/config.php');
 <h4 style="padding-top: 20px"><?php echo $row['Name'];?>(<?php echo $row['BreedType'];?>)</h4>
 <p style="padding-top: 20px"><?php echo $row['Description'];?>.</p>
 <strong style="padding-top: 20px">Breed: <?php echo $row['BreedType'];?></strong><br>
-<strong style="padding-top: 20px">Cage Number: <?php echo $row['CageNumber'];?>.</strong><br>
+<strong style="padding-top: 20px">Cage Number: <?php echo $row['CageNumber'];?></strong><br>
 					<?php }?>
 					</div>	
 				</div>
+				<div class="col-md-2"></div>
 				
 				<div class="clearfix"> </div>
 			</div>

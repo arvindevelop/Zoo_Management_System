@@ -24,8 +24,8 @@ body{
 	margin:0 0; 
 	font-family: 'OpenSans-Regular'
 }
+
 .header-top {
-    padding: 2em 0;
 	background-color: #fff;
 }
 .navbar-brand {
@@ -43,7 +43,7 @@ body{
 .navbar-brand h1 a {
     text-decoration: none;
 	color:#a9a685;
-	font-size: 1.2em;
+	font-size: 1em;
     font-family: 'FugazOne-Regular';
     text-transform: capitalize;
 }
@@ -73,7 +73,7 @@ body{
 .navbar-brand {
     float: left;
     height: 0px;
-    padding: 0px 15px;
+    padding: 5px 15px;
     font-size: 18px;
     line-height: 20px;
 }
@@ -96,6 +96,9 @@ body{
      border-color: #fff!important;
     background-color: #fff;
 }
+.header-top {
+	background-color: #fff;
+}
 .header-banner {
     background: url(../images/main-banner.jpg) no-repeat 0px 0px;
     background-size: cover;
@@ -117,7 +120,7 @@ body{
     width: 63%;
 }
 .banner-grid p {
-    font-size: 1em;
+    font-size: 1.5em;
     color: #fff;
 	line-height:1.8em;
 	padding: 0.5em 0 0;
@@ -128,9 +131,9 @@ body{
 	font-family: 'FugazOne-Regular';
 }
 .head-banner p{
-     font-size: 1em;
-    color: #fff;
-	line-height:1.8em;
+     font-size: 1.5em;
+    color: darkorange;
+	line-height:1.5em;
 	padding: 0.5em 0 0;
 }
 .welcome {
@@ -403,12 +406,12 @@ span.glyphicon.glyphicon-user:hover {
 	background: #ff9541;
 }
 .footer-top p {
-	font-size: 0.9em;
+	font-size: 1.2em;
 	color: #fff;
 	font-weight: 400;
 }
 .footer-top  a {
-	font-size: 1em;
+	font-size: 1.5em;
 	color:#fff;
 	font-weight: 400;
 	text-transform: capitalize;
@@ -538,7 +541,7 @@ span.glyphicon.glyphicon-user:hover {
 }
 .right-grid {
   float: left;
-  width: 77%;
+  font-size: 1.2em;
 }
 .left-grid p {
   background-color: #eee;
@@ -808,7 +811,7 @@ a.mask {
     font-size: 1.4em;
 }
 .head-banner p,.banner-grid p,.wel-info p,.feature-grid p,.testimonials p ,.event-grid1 p,.specials1 p,.about-grid p,.team-grid p,.right-grid p,.services-grid p,.contact_left p,.company_ad p{
-    font-size: 0.965em;
+    font-size: 1.5em;
 }
 .specials1 ul li a {
     font-size: 0.96em;

@@ -20,7 +20,7 @@ include('includes/config.php');
 			<div class="header-banner">
 				<div class="container">
 					<div class="head-banner">
-						<h3>Visit to a Zoo</h3>
+						<h3><b>Visit to a Zoo</b></h3>
 						<p> A visit to a zoo offers us an opportunity to see the wild animals.Zoo is a place where we can see different animals and birds at one place. It has great attraction particularly for the children. A visit to a zoo gives us both information and entertainment. We come to learn about the rare species.</p>
 					</div>
 				</div>

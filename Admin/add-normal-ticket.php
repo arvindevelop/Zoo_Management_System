@@ -71,11 +71,13 @@ if(isset($_POST['submit']))
                                                 <label for="exampleInputEmail1">Adult</label>
                                                 <input type="text" class="form-control" id="noadult" name="noadult" aria-describedby="emailHelp" placeholder="No. of Adult" value="" required="true">
                                             </div>
-                                         <div class="form-group">
+                                            <div class="form-group">
                                                 <label for="exampleInputEmail1">Children</label>
                                                 <input type="text" class="form-control" id="nochildren" name="nochildren" aria-describedby="emailHelp" placeholder="No. of Childrens" value="" required="true">
                                                 
                                             </div>
+                                            <label for="exampleInputEmail1">Foreigner</label>
+                                            <input type="checkbox" id="foreigner" name="foreigner"><br><br>
                                             <?php
 
 $ret=mysqli_query($con,"select * from ticket where TicketType='Adult'");
