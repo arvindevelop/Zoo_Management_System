@@ -57,9 +57,8 @@ while ($row=mysqli_fetch_array($ret)) {
 
 ?>
                                         <h4 class="header-title" style="color: blue">View Detail of Ticket ID: <?php  echo $row['TicketID'];?></h4>
-                                        <h5 class="header-title" style="color: blue">Visiting Date: <?php  echo $row['PostingDate'];?></h5>
-
-
+                                        <h5 class="header-title" style="color: blue">Visiting Date: <?php  echo $row['PostingDate'];?><span style="float:right"><a href="delete-ticket.php?viewid=<?php echo $row['UID'];?>">Delete</a></span></h5>
+                                        
                                         <table border="1" class="table table-striped table-bordered first" >
                                             <tr>
                                                 <th>#</th>
