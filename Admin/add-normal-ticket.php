@@ -9,11 +9,16 @@ if(isset($_POST['submit']))
   {
     $noadult=$_POST['noadult'];
     $nochildren=$_POST['nochildren'];
+    $isforeigner=$_POST['foreigner'];
     $aprice=$_POST['aprice'];
     $cprice=$_POST['cprice'];
+    $foreignfare=$_POST['fprice'];
     $ticketid=mt_rand(100000000, 999999999);
+
+    if($isforeigner != 1)
+         $foreignfare = 0;
    
-        $query=mysqli_query($con, "insert into  customer(TicketID,NoAdult,NoChildren,AdultUnitprice,ChildUnitprice) value('$ticketid','$noadult','$nochildren','$aprice','$cprice')");
+    $query=mysqli_query($con, "insert into  customer(TicketID,NoAdult,NoChildren,AdultUnitprice,ChildUnitprice,Foreignerfare) value('$ticketid','$noadult','$nochildren','$aprice','$cprice','$foreignfare')");
     if ($query) {
     
      echo '<script>alert("Ticket information has been added.")</script>';
@@ -74,10 +79,11 @@ if(isset($_POST['submit']))
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Children</label>
                                                 <input type="text" class="form-control" id="nochildren" name="nochildren" aria-describedby="emailHelp" placeholder="No. of Childrens" value="" required="true">
-                                                
                                             </div>
-                                            <label for="exampleInputEmail1">Foreigner</label>
-                                            <input type="checkbox" id="foreigner" name="foreigner"><br><br>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Foreigner</label>
+                                                <input type="checkbox" id="foreigner" name="foreigner" aria-describedby="emailHelp" value=1>
+                                            </div>
                                             <?php
 
 $ret=mysqli_query($con,"select * from ticket where TicketType='Adult'");
@@ -96,6 +102,17 @@ while ($row=mysqli_fetch_array($ret)) {
 
 ?>
                                             <input type="hidden" name="cprice" value="<?php  echo $row['Price'];?>">
+                                          
+                                      <?php } ?>
+
+                                      <?php
+
+$ret=mysqli_query($con,"select * from ticket where TicketType='Foreigner'");
+$cnt=1;
+while ($row=mysqli_fetch_array($ret)) {
+
+?>
+                                            <input type="hidden" name="fprice" value="<?php  echo $row['Price'];?>">
                                           
                                       <?php } ?>
                                             <button type="submit" class="btn btn-primary mt-4 pr-4 pl-4" name="submit">Submit</button>

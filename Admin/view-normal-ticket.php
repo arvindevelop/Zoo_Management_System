@@ -79,10 +79,13 @@ while ($row=mysqli_fetch_array($ret)) {
                                     <td style="padding-left: 10px">$<?php  echo $aup=$row['ChildUnitprice'];?></td>
                                      <td style="padding-left: 10px">$<?php  echo $tc=$aup*$nochild;?></td>
                                 </tr>
-     
+                                <tr>
+                                    <th style="text-align: left;color: black;font-size: 17px" colspan="3">Foreigner Price</th>
+                                    <td style="padding-left: 10px;">$<?php   echo $tf=$row['Foreignerfare'];?></td>
+                                </tr>
                                  <tr>
                                     <th style="text-align: center;color: red;font-size: 20px" colspan="3">Total Ticket Price</th>
-                                    <td style="padding-left: 10px;">$<?php  echo ($ta+$tc);?></td>
+                                    <td style="padding-left: 10px;">$<?php  echo ($ta+$tc+$tf);?></td>
                                 </tr>
                                 </table>
                                     </div>
