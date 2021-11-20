@@ -29,7 +29,7 @@ if (strlen($_SESSION['zmsaid']==0)) {
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Admin Profile - Zoo Management System</title>
+    <title>ZMS | Admin Profile</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="assets/images/icon/favicon.ico">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -97,7 +97,7 @@ while ($row=mysqli_fetch_array($ret)) {
                     </div>
                 </div>
             </div>
-        </div>
+        </div><br>
         <!-- main content area end -->
         <!-- footer area start-->
         <?php include_once('includes/footer.php');?>

@@ -18,7 +18,7 @@ if (strlen($_SESSION['zmsaid']==0)) {
     <link rel="shortcut icon" type="image/png" href="assets/images/icon/favicon.ico">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-    <title>Manage Normal Ticket - Zoo Management System</title>
+    <title>ZMS | Dashboard</title>
 </head>
 
 <body>
@@ -38,7 +38,7 @@ if (strlen($_SESSION['zmsaid']==0)) {
                             <div class="card-body">
                                 <h4 class="header-title">View Detail of Tickets</h4>
                                 <div class="data-tables">
-                                    <table class="table text-center">
+                                    <table class="table text-center table-hover"><!-- Add this class table-responsive-->
                                         <thead class="bg-light text-capitalize">
                                             <tr>
                                                 <th>S.NO</th>

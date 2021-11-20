@@ -37,12 +37,10 @@ $aimg=md5($aimg).time().$extension;
   }
   ?>
 <!doctype html>
-<html class="no-js" lang="en">
+<html>
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Add Animal Detail - Zoo Management System</title>
+    <title>Add Animal Detail - ZMS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="assets/images/icon/favicon.ico">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -116,6 +114,9 @@ while ($row=mysqli_fetch_array($ret)) {
         <!-- footer area end-->
     </div>
     <!-- page container area end -->
+
+    <!-- jquery latest version -->
+    <script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
     <!-- bootstrap 4 js -->
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>

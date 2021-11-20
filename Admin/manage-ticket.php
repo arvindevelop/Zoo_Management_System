@@ -12,7 +12,7 @@ if (strlen($_SESSION['zmsaid']==0)) {
 <html>
 
 <head>
-    <title>Manage Normal Ticket - Zoo Management System</title>
+    <title>Manage Normal Ticket - ZMS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="assets/images/icon/favicon.ico">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -77,7 +77,7 @@ $cnt=$cnt+1;
                     
                 </div>
             </div>
-        </div>
+        </div><br>
         <!-- main content area end -->
         <!-- footer area start-->
         <?php include_once('includes/footer.php');?>

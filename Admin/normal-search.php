@@ -12,7 +12,7 @@ if (strlen($_SESSION['zmsaid']==0)) {
 <html>
 
 <head>
-    <title>Search Indian Ticket - Zoo Management System</title>
+    <title>ZMS | Search Ticket</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="assets/images/icon/favicon.ico">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">

@@ -22,7 +22,7 @@ if(isset($_POST['login']))
 <html>
 
 <head>
-    <title>Login - Zoo Management System</title>
+    <title>Login - ZMS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="assets/images/icon/favicon.ico">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -51,18 +51,13 @@ if(isset($_POST['login']))
                     </div>
                     <div class="login-form-body">
                         <div class="form-gp">
-                            <label>User Name</label>
-                            <input type="text" id="username" name="name" required="true">
-                            <i class="ti-user"></i>
+                            <input type="text" id="username" name="name" placeholder="User Name" required="true">
                         </div>
                         <div class="form-gp">
-                            <label>Password</label>
-                            <input type="password" id="password" name="password" required="true">
-                            <i class="ti-lock"></i>
+                            <input type="password" id="password" name="password" placeholder="Password" required="true">
                         </div>
                         <div class="row mb-4 rmber-area">
-                            <div class="col-6">
-                                
+                            <div class="col-6"> 
                             </div>
                             <div class="col-6 text-right">
                                 <a href="forgot-password.php">Forgot Password?</a>

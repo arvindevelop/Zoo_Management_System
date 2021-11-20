@@ -48,7 +48,7 @@ echo "<script>alert('This cage number is already alloted to other animal');</scr
 <html>
 
 <head>
-    <title>Add Animal Detail - Zoo Management System</title>
+    <title>ZMS | Add Animal Detail</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="assets/images/icon/favicon.ico">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
