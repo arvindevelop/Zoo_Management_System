@@ -40,7 +40,7 @@ if (strlen($_SESSION['zmsaid']==0)) {
                             <div class="card-body">
                                 <h4 class="header-title">View Detail of Tickets</h4>
                                 <div class="data-tables">
-                <table class="table text-center">
+                <table class="table text-center table-hover">
                                         <thead class="bg-light text-capitalize">
                                             <tr>
                                                 <th>S.NO</th>

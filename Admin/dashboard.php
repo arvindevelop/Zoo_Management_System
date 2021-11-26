@@ -15,9 +15,12 @@ if (strlen($_SESSION['zmsaid']==0)) {
    
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
     <link rel="shortcut icon" type="image/png" href="assets/images/icon/favicon.ico">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <!-- modernizr css -->
+    <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
     <title>ZMS | Dashboard</title>
 </head>
 
@@ -54,17 +57,17 @@ while ($row=mysqli_fetch_array($ret)) {
 
 ?>
                                         <tbody>
-          <tr data-expanded="true">
-            <td><?php echo $cnt;?></td>
+                <tr data-expanded="true">
+                  <td><?php echo $cnt;?></td>
               
                   <td><?php  echo $row['TicketID'];?></td>
                   <td><?php  echo $row['PostingDate'];?></td>
-                  <td><a href="view-normal-ticket.php?viewid=<?php echo $row['UID'];?>">View</a>
+                  <td><a href="view-normal-ticket.php?viewid=<?php echo $row['UID'];?>">View</a></div>
                 </tr>
                 <?php 
 $cnt=$cnt+1;
 }?>
- </tbody>
+                                        </tbody>
                                     </table>
                                 </div>
                             </div>
