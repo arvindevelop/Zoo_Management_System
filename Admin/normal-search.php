@@ -52,7 +52,7 @@ if(isset($_POST['search']))
 
 $sdata=$_POST['searchdata'];
   ?>
-  <h4 align="center">Result against "<?php echo $sdata;?>" keyword </h4>  
+  <h4 align="center">Result against "<?php echo $sdata;?>" TicketID </h4>  
                                 <div class="data-tables">
                                   <table class="table text-center">
                                         <thead class="bg-light text-capitalize">

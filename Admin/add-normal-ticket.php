@@ -68,7 +68,7 @@ if(isset($_POST['submit']))
                             <div class="col-12 mt-5">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="header-title">Add Normal Zoo Ticket</h4>
+                                        <h4 class="header-title">Add Zoo Ticket</h4>
 
 
                                         <form method="post" action="" name="">
