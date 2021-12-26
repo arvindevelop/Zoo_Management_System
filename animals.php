@@ -45,7 +45,7 @@ include('includes/config.php');
         // Formula for pagination
         $no_of_records_per_page = 4;
         $offset = ($pageno-1) * $no_of_records_per_page;
-        $total_pages_sql = "SELECT COUNT(*) FROM animal";
+        //$total_pages_sql = "SELECT COUNT(*) FROM animal";
 $ret1=mysqli_query($con,"select COUNT(*) from animal");
 $total_rows = mysqli_fetch_array($ret1)[0];
 $total_pages = ceil($total_rows / $no_of_records_per_page);

@@ -19,11 +19,11 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                               <ul class="nav navbar-nav">
-                                    <li class="active"><a href="index.php"><b>Home <span class="sr-only">(current)</b></span></a></li>
-                                    <li><a href="about.php"><b>About</b></a></li>
-                                    <li><a href="animals.php"><b>Animals</b></a>
-                                    </li>
-                                    <li><a href="admin/index.php"><b>Admin</b></a></li>
+                                    <li class="active"><a href="index.php"><b>HOME <span class="sr-only">(current)</b></span></a></li>
+                                    <li><a href="about.php"><b>ABOUT</b></a></li>
+                                    <li><a href="animals.php"><b>ANIMALS</b></a></li>
+                                    <li><a href="ticket.php"><b>BUY TICKET</b></a></li>
+                                    <li><a href="admin/index.php"><b>ADMIN</b></a></li>
                                 </ul>
                             </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
